@@ -1,0 +1,19 @@
+services:
+  webapi2:
+    build:
+      context: D:\GitHub\containerhack4\webapp
+      dockerfile: ../WebApi2/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTPS_PORT: '44359'
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: webapi2
+    ports:
+    - published: 65504
+      target: 80
+    - published: 44359
+      target: 443
+    volumes:
+    - C:\Users\nickward\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\nickward\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+version: '3.4'

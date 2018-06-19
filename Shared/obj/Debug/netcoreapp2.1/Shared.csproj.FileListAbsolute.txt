@@ -1,0 +1,9 @@
+D:\GitHub\containerhack4\Shared\bin\Debug\netcoreapp2.1\Shared.deps.json
+D:\GitHub\containerhack4\Shared\bin\Debug\netcoreapp2.1\Shared.dll
+D:\GitHub\containerhack4\Shared\bin\Debug\netcoreapp2.1\Shared.pdb
+D:\GitHub\containerhack4\Shared\obj\Debug\netcoreapp2.1\Shared.csprojAssemblyReference.cache
+D:\GitHub\containerhack4\Shared\obj\Debug\netcoreapp2.1\Shared.csproj.CoreCompileInputs.cache
+D:\GitHub\containerhack4\Shared\obj\Debug\netcoreapp2.1\Shared.AssemblyInfoInputs.cache
+D:\GitHub\containerhack4\Shared\obj\Debug\netcoreapp2.1\Shared.AssemblyInfo.cs
+D:\GitHub\containerhack4\Shared\obj\Debug\netcoreapp2.1\Shared.dll
+D:\GitHub\containerhack4\Shared\obj\Debug\netcoreapp2.1\Shared.pdb
