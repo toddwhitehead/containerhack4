@@ -47,7 +47,7 @@ namespace webapp.Controllers
             var serverviewmodel = await RefreshMinecraftServerViewModel();
             var server = serverviewmodel.MinecraftServers.Find(x => x.Name.Contains(id));
             var statsviewmodel = new MinecraftServerStatsViewModel();
-            statsviewmodel.Statistics = await MinecraftContext.GetMinecraftServerStatisticsAsync(server));
+            statsviewmodel.Statistics = await MinecraftContext.GetMinecraftServerStatisticsAsync(server);
             return View(statsviewmodel);
         }
     }

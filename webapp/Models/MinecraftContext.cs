@@ -13,7 +13,7 @@ namespace webapp.Models
         public async static Task<MinecraftEvent> GetMinecraftServerStatisticsAsync(MinecraftServer server)
         {
             var endpoint = server.Endpoints.Find(x => x.Name.Contains("rcon"));
-            return GetMinecraftServerStatisticsAsync(endpoint.Address);
+            return await GetMinecraftServerStatisticsAsync(endpoint.Address);
         }
 
         public async static Task<MinecraftEvent> GetMinecraftServerStatisticsAsync(string address)
