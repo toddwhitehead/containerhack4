@@ -4,17 +4,23 @@
 
 @model webapp.ViewModels.MinecraftServerViewModel;
 
-<div class="row">
-    <div class="col-md-3">
-        <h2>Minecraft Servers</h2>
-        <table class="table">
+
+          <h2 class="sub-header">Minecraft Servers</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.MinecraftServers[0].Name)
+                     <th>
+                        Instance Name
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.MinecraftServers[0].Endpoints)
+                        Minecraft Link
+                    </th>
+                    <th>
+                        RCon Link
+                    </th>
+                    <th>
+                        Actions
                     </th>
                 </tr>
             </thead>
@@ -25,23 +31,17 @@
                         <td>
                             @Html.DisplayFor(modelItem => server.Name)
                         </td>
+                         <td>
+                            @String.Concat(server.Endpoints[0].Name," - ", server.Endpoints[0].Address)
+                        </td> 
+                            <td>                                       
+                            @String.Concat(server.Endpoints[1].Name," - ", server.Endpoints[1].Address)
+                        </td> 
+
                         <td>
-                            <table>
-                                <tbody>
-                                    @foreach(var endpoint in server.Endpoints)
-                                    {
-                                        <tr>
-                                            <td>
-                                                @String.Concat(endpoint.Name," - ", endpoint.Address)
-                                            </td>  
-                                        </tr>
-                                    }
-                                </tbody>
-                            </table>
+                        [Delete]
                         </td>
                     </tr>
                 }
             </tbody>
         </table>
-    </div>
-</div>
