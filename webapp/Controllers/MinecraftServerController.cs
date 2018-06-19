@@ -11,10 +11,10 @@ namespace webapp.Controllers
 {
     public class MinecraftServerController : Controller
     {
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             var viewmodel = new MinecraftServerViewModel();
-            viewmodel.MinecraftServers = MinecraftContext.GetMinecraftServerList();    
+            viewmodel.MinecraftServers = await MinecraftContext.GetMinecraftServerListAsync();    
             return View(viewmodel);
         }
     }

@@ -1,11 +1,35 @@
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace webapp.Models
 {
     public static class MinecraftContext
     {
-        public static List<MinecraftServer> GetMinecraftServerList()
+        public async static Task<List<MinecraftServer>> GetMinecraftServerListAsync()
+        {
+            var jsonserverlist = await GetMinecraftServerListFromAPIAsync();
+            return JsonConvert.DeserializeObject<List<MinecraftServer>>(jsonserverlist);
+        }
+
+        private async static Task<string> GetMinecraftServerListFromAPIAsync()
+        {
+            try
+            {
+                string url = "https://hectagonminecraftfunctions.azurewebsites.net/api/GetMinecraftServerList";
+                var client = new HttpClient();
+                client.DefaultRequestHeaders.Add("Accept", "application/json");
+                var response = await client.GetAsync(url);
+                return await response.Content.ReadAsStringAsync();
+            } catch (Exception e)
+            {
+                return null;
+            }
+        }
+
+        public static List<MinecraftServer> GetHardCodedMinecraftServerList()
         {
             return new List<MinecraftServer>() 
             {
