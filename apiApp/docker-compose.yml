@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  apiapp:
+    image: ${DOCKER_REGISTRY}apiapp
+    build:
+      context: .
+      dockerfile: apiApp/Dockerfile
