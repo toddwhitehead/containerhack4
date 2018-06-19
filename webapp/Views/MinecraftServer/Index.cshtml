@@ -38,9 +38,9 @@
                             @String.Concat(server.Endpoints[1].Name," - ", server.Endpoints[1].Address)
                         </td> 
 
-                        <td>
-                        [Delete]
-                        </td>
+                        <td>    
+                            <a asp-controller="MinecraftServer"  asp-action="Delete" asp-route-id="@server.Name">[Delete]</a>
+                       </td>
                     </tr>
                 }
             </tbody>
