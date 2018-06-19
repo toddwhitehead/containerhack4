@@ -14,7 +14,7 @@ namespace webapp.Models
         {
             try{
                 string url = "https://hectagonminecraftfunctions.azurewebsites.net/api/CreateMinecraftServer";
-                var response = await client.GetAsync(url);
+                var response = await client.PostAsync(url, null);
                 if(response.IsSuccessStatusCode)
                     return true;
                 else
