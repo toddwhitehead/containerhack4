@@ -69,7 +69,7 @@ namespace webapp.Models
                 client.DefaultRequestHeaders.Add("Accept", "application/json");
                 var response = await client.GetAsync(url);
                 return await response.Content.ReadAsStringAsync();
-            } catch (Exception e)
+            } catch (Exception)
             {
                 return null;
             }
