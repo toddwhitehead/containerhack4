@@ -10,6 +10,20 @@ namespace webapp.Models
     {
         private static HttpClient client = new HttpClient();
 
+        public async static Task<bool> DeleteMinecraftServer(string name)
+        {
+            try{
+                string url = $"https://hectagonminecraftfunctions.azurewebsites.net/api/DeleteMinecraftServer?name={name}";
+                var response = await client.GetAsync(url);
+                if(response.IsSuccessStatusCode)
+                    return true;
+                else
+                    return false;
+            } catch {
+                return false;
+            }
+        }
+
         public async static Task<bool> CreateMinecraftServer()
         {
             try{

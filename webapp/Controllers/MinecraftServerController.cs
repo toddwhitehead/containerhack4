@@ -32,5 +32,14 @@ namespace webapp.Controllers
                 ViewData["Messsage"] = "Error creating minecraft server...";
             return View();
         }
+
+        public async Task<IActionResult> Delete(string name)
+        {
+            if(await MinecraftContext.DeleteMinecraftServer(name))
+                ViewData["Message"] = "Minecraft server is deleted.";
+            else
+                ViewData["Messsage"] = "Error deleting minecraft server...";
+            return View();
+        }
     }
 }
