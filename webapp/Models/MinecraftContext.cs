@@ -8,11 +8,12 @@ namespace webapp.Models
 {
     public static class MinecraftContext
     {
+        private static HttpClient client = new HttpClient();
+
         public async static Task<bool> CreateMinecraftServer()
         {
             try{
                 string url = "https://hectagonminecraftfunctions.azurewebsites.net/api/CreateMinecraftServer";
-                var client = new HttpClient();
                 var response = await client.GetAsync(url);
                 if(response.IsSuccessStatusCode)
                     return true;
@@ -34,7 +35,6 @@ namespace webapp.Models
             try
             {
                 string url = "https://hectagonminecraftfunctions.azurewebsites.net/api/GetMinecraftServerList";
-                var client = new HttpClient();
                 client.DefaultRequestHeaders.Add("Accept", "application/json");
                 var response = await client.GetAsync(url);
                 return await response.Content.ReadAsStringAsync();
