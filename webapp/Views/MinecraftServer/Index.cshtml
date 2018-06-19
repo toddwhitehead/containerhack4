@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Minecraft Server Page";
+}
+
+@model webapp.ViewModels.MinecraftServerViewModel;
+
+<div class="row">
+    <div class="col-md-3">
+        <h2>Minecraft Servers</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.MinecraftServers[0].Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.MinecraftServers[0].Endpoints)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var server in Model.MinecraftServers)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => server.Name)
+                        </td>
+                        <td>
+                            <table>
+                                <tbody>
+                                    @foreach(var endpoint in server.Endpoints)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @String.Concat(endpoint.Name," - ", endpoint.Address)
+                                            </td>  
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
