@@ -41,5 +41,14 @@ namespace webapp.Controllers
                 ViewData["Messsage"] = $"Error deleting minecraft server {id}...";
             return View();
         }
+
+        public async Task<IActionResult> Details(string id)
+        {
+            var serverviewmodel = await RefreshMinecraftServerViewModel();
+            var server = serverviewmodel.MinecraftServers.Find(x => x.Name.Contains(id));
+            var statsviewmodel = new MinecraftServerStatsViewModel();
+            statsviewmodel.Statistics = await MinecraftContext.GetMinecraftServerStatisticsAsync(server));
+            return View(statsviewmodel);
+        }
     }
 }

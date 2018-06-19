@@ -10,6 +10,22 @@ namespace webapp.Models
     {
         private static HttpClient client = new HttpClient();
 
+        public async static Task<MinecraftEvent> GetMinecraftServerStatisticsAsync(MinecraftServer server)
+        {
+            var endpoint = server.Endpoints.Find(x => x.Name.Contains("rcon"));
+            return GetMinecraftServerStatisticsAsync(endpoint.Address);
+        }
+
+        public async static Task<MinecraftEvent> GetMinecraftServerStatisticsAsync(string address)
+        {
+            var ipaddress = address.Substring(0, address.IndexOf(":"));
+            var url = $"https://mcapi.us/server/status?ip={ipaddress}";
+            var response = await client.GetAsync(url);
+            var responseFromServer = await response.Content.ReadAsStringAsync();
+            var minecraftEvent = JsonConvert.DeserializeObject<MinecraftEvent>(responseFromServer);
+            return minecraftEvent;
+        }
+
         public async static Task<bool> DeleteMinecraftServer(string name)
         {
             try{
@@ -41,7 +57,8 @@ namespace webapp.Models
         public async static Task<List<MinecraftServer>> GetMinecraftServerListAsync()
         {
             var jsonserverlist = await GetMinecraftServerListFromAPIAsync();
-            return JsonConvert.DeserializeObject<List<MinecraftServer>>(jsonserverlist);
+            var serverlist = JsonConvert.DeserializeObject<List<MinecraftServer>>(jsonserverlist);
+            return serverlist;
         }
 
         private async static Task<string> GetMinecraftServerListFromAPIAsync()
