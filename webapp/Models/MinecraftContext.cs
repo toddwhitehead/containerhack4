@@ -8,6 +8,21 @@ namespace webapp.Models
 {
     public static class MinecraftContext
     {
+        public async static Task<bool> CreateMinecraftServer()
+        {
+            try{
+                string url = "https://hectagonminecraftfunctions.azurewebsites.net/api/CreateMinecraftServer";
+                var client = new HttpClient();
+                var response = await client.GetAsync(url);
+                if(response.IsSuccessStatusCode)
+                    return true;
+                else
+                    return false;
+            } catch{
+                return false;
+            }
+        }
+
         public async static Task<List<MinecraftServer>> GetMinecraftServerListAsync()
         {
             var jsonserverlist = await GetMinecraftServerListFromAPIAsync();
