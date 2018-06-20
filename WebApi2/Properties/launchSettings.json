@@ -1,5 +1,4 @@
-﻿{
-  "$schema": "http://json.schemastore.org/launchsettings.json",
+{
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
@@ -8,12 +7,14 @@
       "sslPort": 44359
     }
   },
+  "$schema": "http://json.schemastore.org/launchsettings.json",
   "profiles": {
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
       "launchUrl": "api/values",
       "environmentVariables": {
+        "TOKEN": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImRlZmF1bHQtdG9rZW4tbW43emoiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC5uYW1lIjoiZGVmYXVsdCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50LnVpZCI6IjgwZWE3ZTQ3LTczNGQtMTFlOC04MDAyLTJhZjU0ZDg1MmU1ZCIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDpkZWZhdWx0OmRlZmF1bHQifQ.cbttNZQg0sK9cKueqLJ-igi9BXMYbaIca7D_VSPnRzV4V0uJVV2Yf2CeONWJjGoNDNpqhNDC7PvUH35RepTwPHET-VomqaoodyUutjhGcANek2qNK-okjPymWjeB5iiTsYCqkQepsnJLJVmIeaOYl6-pBGYWc2ITNAiQQic3e648D523REuEMIiKkkgmTpw6n8Yfszs3KHKc_gbkLxEFi19IPyjbyUihnByz6c549BxoixAhH5dwnGcoT8ZXcvYbPSA3aFfinbJesUX_zds8LjiSW1HqCKtDzRChkj2hx_5MXefSqoyagyIqVlKbMMwgpKGiaoa2afYD8qULsYkAPPdKeJEQzzliFMLFQ3KabfjIUK4-qyTtv92xntITIB6NUVKW6wB1Mgs-zsyEg251wIxROLXsglWG2BuBsmtyGeAIZZfiFNlBSP_g9hxivh0l5bHGD8dUVasg9E7w-Vo2PalgnRrfiZyN_7bUYxg0Mp0vI7MXqpHTWLJ1ZD3rOdyzZJVYU5_hG6x2yJX57O2NFv1CxW6Rit2d963HFwy887ZsItUMqPhFRMtVhummS49yr0SVeUqHZb6x2il5ApEuftxtbLDK6pccnpAWn2wp6Y40NrWRkr31z48VVOcdfCyNlU6CfZDgUXsNjwlxsZsrrtvys4LmU7nZoGcIn0nxVTM",
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
@@ -21,10 +22,10 @@
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "api/values",
-      "applicationUrl": "https://localhost:5001;http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      },
+      "applicationUrl": "https://localhost:5001;http://localhost:5000"
     }
   }
 }

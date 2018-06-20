@@ -43,7 +43,8 @@ namespace webapp.Models
         public async static Task<bool> CreateMinecraftServer()
         {
             try{
-                string url = "https://hectagonminecraftfunctions.azurewebsites.net/api/CreateMinecraftServer";
+                //string url = "https://hectagonminecraftfunctions.azurewebsites.net/api/CreateMinecraftServer";
+                string url = "https://localhost:44359/api/MinecraftServer";
                 var response = await client.PostAsync(url, null);
                 if(response.IsSuccessStatusCode)
                     return true;
@@ -65,8 +66,9 @@ namespace webapp.Models
         {
             try
             {
-                string url = "https://hectagonminecraftfunctions.azurewebsites.net/api/GetMinecraftServerList";
-                client.DefaultRequestHeaders.Add("Accept", "application/json");
+                //string url = "https://hectagonminecraftfunctions.azurewebsites.net/api/GetMinecraftServerList";
+                string url = "https://localhost:44359/api/MinecraftServer";
+                //client.DefaultRequestHeaders.Add("Accept", "application/json");
                 var response = await client.GetAsync(url);
                 return await response.Content.ReadAsStringAsync();
             } catch (Exception)

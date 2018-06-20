@@ -1,3 +1,4 @@
 webapp/bin
 webapp/obj/Debug
 /webapp/.vs
+/WebApi2/k8s/config

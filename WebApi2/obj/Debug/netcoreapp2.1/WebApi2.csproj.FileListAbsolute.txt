@@ -16,3 +16,4 @@ D:\GitHub\containerhack4\WebApi2\bin\Debug\netcoreapp2.1\Shared.dll
 D:\GitHub\containerhack4\WebApi2\bin\Debug\netcoreapp2.1\Shared.pdb
 D:\GitHub\containerhack4\WebApi2\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
 D:\GitHub\containerhack4\WebApi2\obj\Debug\netcoreapp2.1\WebApi2.csproj.CopyComplete
+D:\GitHub\containerhack4\WebApi2\bin\Debug\netcoreapp2.1\k8s\config

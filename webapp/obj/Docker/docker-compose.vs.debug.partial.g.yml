@@ -1,0 +1,20 @@
+version: '3.4'
+
+services:
+  webapi2:
+    image: webapi2:dev
+    build:
+      target: base
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_webapi2$
+    volumes:
+      - D:\GitHub\containerhack4\WebApi2:/app
+      - C:\Users\nickward\vsdbg\vs2017u5:/remote_debugger:ro
+#$nuget_volume_mapping_webapi2$
+    entrypoint: tail -f /dev/null
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_webapi2$ bin/Debug/netcoreapp2.1/WebApi2.dll"
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/bash -c \"if PID=$$(pidof -x dotnet); then kill $$PID; fi\""
